@@ -1,0 +1,29 @@
+﻿@model EmployeeViewModel
+
+@{ 
+    ViewBag.Title = "Sheqmeni sheni modeli da airchie dep";
+}
+
+<form enctype="multipart/form-data" asp-action="Create" asp-controller="home" method="post">
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name" class="alert-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" />
+    </div>
+    <div>
+        <label asp-for="Photo"></label>
+        <input asp-for="Photo"/>
+    </div>
+    <div>
+        <label asp-for="Departament"></label>
+        <select asp-for="Departament" asp-items="Html.GetEnumSelectList<Dept>()"></select>
+    </div>
+    <div>
+        <button type="submit">Create</button>
+    </div>
+    <div asp-validation-summary="All"></div>
+</form>

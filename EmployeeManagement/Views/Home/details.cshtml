@@ -1,0 +1,16 @@
+﻿@model HomeDetailsViewModels
+@{ 
+    ViewBag.Title = "დეტალები";
+    var photoPath = "~/images/" + (Model.employee.PhotoPath ?? "noimage.jpg");
+}
+
+    <h3>@Model.Details</h3>
+    <div>
+
+        <div>@Model.employee.Name</div>
+        <div>@Model.employee.Email</div>
+        <div>@Model.employee.Departament</div>
+        <img asp-append-version="true" src=@photoPath/>
+
+    </div>
+
